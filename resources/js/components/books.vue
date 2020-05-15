@@ -1,7 +1,7 @@
 <template>
   <div v-if="loading">
     <p>
-      Loadin ...
+      Loading ...
     </p>
   </div>
   <div v-else>
@@ -78,7 +78,6 @@
                         this.books = data.data;
                         this.pageCount = data.meta.last_page;
                         this.pageNum = page
-
                     })
                     .finally(() => (this.loading = false));
             },
