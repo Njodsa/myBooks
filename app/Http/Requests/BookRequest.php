@@ -23,15 +23,23 @@ class BookRequest extends FormRequest
      */
     public function rules()
     {
-      $genres = 'History,Children,Fantasy,Drama,Romance,Art,Diary,Biography,
+      $genres = "History,Children,Fantasy,Drama,Romance,Art,Diary,Biography,
                  History,Math,Science,Self help,Travel,Health,Cookbook,Journal
-                 ,Poetry,Political';
+                 ,Poetry,Political";
         return [
-            'name' => ['required','string','min:3','max:20'],
+            'name' => ['required','string','min:3','max:100'],
             'authorname' => ['required','string','min:3','max:20'],
-            'isbn' => ['regex:/([0-9]{3}-[0-9]{4}-[0-9]{2}-[0-9]{2})/u'],
+            'isbn' => ['regex:/(^(\d+-?)+\d+$)/u'],
             'price' => 'numeric',
             'genres'=> ['in:'.$genres]
         ];
+    }
+
+    public function messages()
+    {
+    return [
+      'isbn.regex' => 'isbn should match format 908-5877-54-45'
+
+    ];
     }
 }
