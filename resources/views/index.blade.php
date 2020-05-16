@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 col-sm-8 col-sm-offset-2 p-0">
+      <div class="col-lg-12 col-sm-12 col-sm-offset-2 p-0">
         <div id="app">
           <div class="text-center">
           <div class="pt-4 main-header">

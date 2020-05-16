@@ -38038,7 +38038,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.loading
-    ? _c("div", [_c("p", [_vm._v("\n     Loadin ...\n   ")])])
+    ? _c("div", [_c("p", [_vm._v("\n     Loading ...\n   ")])])
     : _c("div", [
         _vm.books.length > 0
           ? _c(
@@ -38053,22 +38053,37 @@ var render = function() {
                         "tbody",
                         _vm._l(_vm.books, function(book, index) {
                           return _c("tr", [
-                            _c("td", [
-                              _vm._v(_vm._s(_vm.getOverallIndex(index)))
+                            _c(
+                              "td",
+                              { attrs: { "data-label": "ID", scope: "row" } },
+                              [_vm._v(_vm._s(_vm.getOverallIndex(index)))]
+                            ),
+                            _vm._v(" "),
+                            _c("td", { attrs: { "data-label": "name" } }, [
+                              _vm._v(_vm._s(book.name))
                             ]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(book.name))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(book.authorname))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(book.isbn))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(book.genres))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(book.price))]),
                             _vm._v(" "),
                             _c(
                               "td",
+                              { attrs: { "data-label": "Author Name" } },
+                              [_vm._v(_vm._s(book.authorname))]
+                            ),
+                            _vm._v(" "),
+                            _c("td", { attrs: { "data-label": "ISBN" } }, [
+                              _vm._v(_vm._s(book.isbn))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { attrs: { "data-label": "Genres" } }, [
+                              _vm._v(_vm._s(book.genres))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { attrs: { "data-label": "Price" } }, [
+                              _vm._v(_vm._s(book.price))
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              { attrs: { "data-label": "Actions" } },
                               [
                                 _c(
                                   "a",
@@ -38139,7 +38154,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ID")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
         _vm._v(" "),

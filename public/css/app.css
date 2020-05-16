@@ -13999,6 +13999,11 @@ li {
   color: #fff;
 }
 
+.table th,
+.table td {
+  border-top: 1px solid #dee2e65c !important;
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     width: 94% !important;
@@ -14014,6 +14019,41 @@ li {
 
   .header a {
     font-size: 12px;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    display: block;
+    margin-bottom: 0.625em;
+    border-radius: 4px;
+    border: 1px solid #dddddd54;
+  }
+
+  table td {
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
   }
 }
 

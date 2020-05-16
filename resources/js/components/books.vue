@@ -11,7 +11,7 @@
           <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Author Name</th>
                     <th scope="col">ISBN</th>
@@ -22,13 +22,13 @@
             </thead>
             <tbody>
                 <tr v-for="(book, index) in books">
-                    <td>{{getOverallIndex(index)}}</td>
-                    <td>{{ book.name }}</td>
-                    <td>{{ book.authorname }}</td>
-                    <td>{{ book.isbn }}</td>
-                    <td>{{ book.genres }}</td>
-                    <td>{{ book.price }}</td>
-                    <td>
+                    <td data-label="ID" scope="row" >{{getOverallIndex(index)}}</td>
+                    <td data-label="name">{{ book.name }}</td>
+                    <td data-label="Author Name">{{ book.authorname }}</td>
+                    <td data-label="ISBN">{{ book.isbn }}</td>
+                    <td data-label="Genres">{{ book.genres }}</td>
+                    <td data-label="Price">{{ book.price }}</td>
+                    <td data-label="Actions">
                         <a @click="deleteBook(book.id,book.name)" class="btn-delete">Delete</a> |
                           <router-link class="btn-update" :to="{name:'updateBook',params:{id:book.id}}">
                             Update
