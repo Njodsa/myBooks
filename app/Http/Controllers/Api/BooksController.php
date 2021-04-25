@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Book;
+use App\book;
 use App\Http\Resources\BookResource;
 use App\Http\Requests\BookRequest;
 
